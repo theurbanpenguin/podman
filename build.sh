@@ -40,6 +40,7 @@ podman image ls
 podman container run --rm -dit --name ubuntu --hostname ubuntu ubuntu:focal
 podman container ls
 podman container stop ubuntu
+podman container prune -f
 
 read -p "This is 3rd section, do you want to continue y/n: "
 if [ "$REPLY" == "n" ]; then exit 1; fi
