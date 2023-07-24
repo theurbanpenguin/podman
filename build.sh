@@ -30,7 +30,13 @@ podman image inspect fedora --format "{{json .Config.Cmd}}"
 read -p "This is 2nd section, do you want to continue y/n: "
 if [ "$REPLY" == "n" ]; then exit 1; fi
 
-podman container ls -a --format "{{.Names}}"
-podman container start $(podman container ls -a --format "{{.Names}}")
-podman container logs $(podman container ls -a --format "{{.Names}}")
-podman container prune -f
+sudo yum install -y skopeo
+skopeo inspect docker://docker.io/library/ubuntu:latest
+skopeo inspect  --format "{{.RepoTags}}" docker://docker.io/library/ubuntu:latest
+skopeo inspect  --format "{{.RepoTags}}" docker://docker.io/library/ubuntu:latest | tr ' ' '\n'
+podman image pull docker.io/ubuntu:focal
+podman image pull docker.io/fedora:38
+podman image ls
+podman container run --rm -dit --name ubuntu --hostname ubuntu ubuntu:focal
+podman container ls
+podman container stop ubuntu
