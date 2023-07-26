@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bethany's Pie Shop</title>
+  <link href="./css/main.css" rel="stylesheet">
+
+  <script type="text/javascript">
+    window.onload = () => {
+      let submit_button = document.querySelector('#submit')
+      submit_button.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        // redirect back to the homepage when the checkout button is pressed because this example doesn't include a "checkout successful" page
+        window.open('./index.html')
+      }, false)
+    }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-header-wrapper">
+      <h1><a href="index.html"><img src="./img/logo.png" alt="Bethany's Pie Shop Logo" /></a></h1>
+      <nav>
+        <ul>
+          <li><a class="shop-dropdown" href="#">Shop <span>&#8964;</span></a>
+            <ul id="hover-menu">
+              <li><a href="#">Seasonal Pies</a></li>
+              <li><a href="#">Fruit Pies</a></li>
+              <li><a href="shop.html">Cheesecakes</a></li>
+              <li><a href="#">All Pies</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Register</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <ul>
+          <li><a href=""><img src="./img/search-icon.png" alt="search icon" /></a></li>
+          <li><a href=""><img src="./img/profile-icon.png" alt="profile icon" /></a></li>
+          <li><a href="cart.html"><img src="./img/cart-icon.png" alt="shopping cart icon" /></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section class="main-content">
+    <h2>Shopping Cart<hr /></h2>
+    <div class="cart-wrapper">
+      <div class="form-wrapper">
+        <fieldset>
+          <form>
+            <label for="first_name">First name</label>
+            <input type="text" id="first_name" name="first_name" value="" />
+            <label for="last_name">Last name</label>
+            <input type="text" id="last_name" name="last_name" value="" />
+            <label for="address_1">Address 1</label>
+            <input type="text" id="address_1" name="address_1" value="" />
+            <label for="address_2">Address 2</label>
+            <input type="text" id="address_2" name="address_2" value="" />
+            <div class="column-wrapper">
+              <div>
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" value="" />
+              </div>
+              <div>
+                <label for="state">State</label>
+                <select id="state" name="state">
+                  <option>AZ</option>
+                  <option>FL</option>
+                  <option>UT</option>
+                </select>
+              </div>
+            </div>
+            <div class="column-wrapper">
+              <div>
+                <label for="zip_code">Zip code</label>
+                <input type="text" id="zip_code" name="zip_code" value="" />
+              </div>
+              <div>
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                  <option>USA</option>
+                  <option>South Africa</option>
+                  <option>Japan</option>
+                </select>
+              </div>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="" />
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" value="" />
+          </form>
+        </fieldset>
+      </div>
+      <div class="subtotal-wrapper">
+        <div class="row">
+          <p>Subtotal</p>
+          <p>$44.85</p>
+        </div>
+        <div class="row">
+          <p>Shipping</p>
+          <p>$15.00</p>
+        </div>
+        <div class="row">
+          <p>Sales Tax</p>
+          <p>--</p>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="row">
+          <p>Estimated Total</p>
+          <p>$59.85</p>
+        </div>
+        <div class="row">
+          <hr>
+        </div>
+        <div class="row">
+          <input type="text" name="discount-code" id="discount-code" placeholder="Discount code or gift card" />
+          <button>Apply</button>
+        </div>
+        <div class="row">
+          <hr>
+        </div>
+        <div class="row">
+          <input type="submit" name="submit" id="submit" value="Checkout" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./js/dropdown.js"></script>
+</body>
+
+</html>
