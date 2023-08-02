@@ -1,12 +1,12 @@
 ---
 - name: Manage Apache Web Server
-  hosts: localhost
+  hosts: all
   become: true
   gather_facts: false
   tasks:
     - name: Install the Apache Web Server Package
       package:
-        name: httpd
+        name: "{{ apache }}"
         state: present
     - name: add web content
       copy:
@@ -14,6 +14,6 @@
         dest: /var/www/html/
     - name: Start and enable Apache web server
       service:
-        name: httpd
+        name: "{{ apache }}"
         state: started
         enabled: true
