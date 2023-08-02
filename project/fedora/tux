@@ -1,1 +1,1 @@
-tux ALL(root) NOPASSWD: ALL
+tux ALL=(root) NOPASSWD: ALL
