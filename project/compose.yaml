@@ -9,6 +9,10 @@ services:
     image: localhost/fedora
     container_name: controller
     hostname: controller
+    ports:
+      - "2222:22"
+    volumes:
+      - /home/tux/podman/project/playbooks:/home/tux/playbooks
     networks:
       - mynetwork
 
